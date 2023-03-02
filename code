@@ -13,6 +13,7 @@ void enKucuk(int a,int s[]){
 	int t;
 	int x;//min=s[k]; nin ne kadar caliscagini bilmedigimiz icin x diye bir bilinmez koydum.
 	t= 1+a+1+a+x+a+1;
+	//yani bu enKucuk fonksiyonun yurutme zamanini T(n) = 3a+3+ x
 	printf("Bu fonksiyon icin T(n) = %d+x\n",t);
 }
 int main(int argc, char *argv[]) {
