@@ -1,52 +1,31 @@
-# Prerequisites
-*.d
+#include <stdio.h>
+#include <stdlib.h>
+void enKucuk(int a,int s[]){ 
+	int min = s[0];   
+	int k; 
 
-# Object files
-*.o
-*.ko
-*.obj
-*.elf
-
-# Linker output
-*.ilk
-*.map
-*.exp
-
-# Precompiled Headers
-*.gch
-*.pch
-
-# Libraries
-*.lib
-*.a
-*.la
-*.lo
-
-# Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
-*.dylib
-
-# Executables
-*.exe
-*.out
-*.app
-*.i*86
-*.x86_64
-*.hex
-
-# Debug files
-*.dSYM/
-*.su
-*.idb
-*.pdb
-
-# Kernel Module Compile Results
-*.mod*
-*.cmd
-.tmp_versions/
-modules.order
-Module.symvers
-Mkfile.old
-dkms.conf
+	for(k=0;k<a;k++){           //k=0 -> 1 kez , k<a -> a+1 kere , k++ -> a kere calisir                    
+		if(s[k]< min){          //a kere calisir
+		min = s[k];           	//Bunun ne kadar caliscagini tahmin edemeyiz cunku eger s[0] en kucukse hic calismaz en buyukse a kadar da calisabilir oyuzden belirleyemeyiz.
+		}
+	}
+		printf(" En kucuk sayi = %d\n ",min);    //bir kez calisir -> +1
+	int t;
+	int x;//min=s[k]; nin ne kadar caliscagini bilmedigimiz icin x diye bir bilinmez koydum.
+	t= 1+a+1+a+x+a+1;
+	printf("Bu fonksiyon icin T(n) = %d+x\n",t);
+}
+int main(int argc, char *argv[]) {
+	int a;
+	printf("Dizinin eleman sayisini giriniz.\n");
+	scanf("%d",&a);
+	int s[a-1];
+	int i;
+	for(i=0;i<a;i++){         
+		printf("Dizinin %d. numarasini giriniz.\n",i+1);
+		scanf("%d",&s[i]);
+	}
+	enKucuk(a,s);
+	//Alper Aziz Paksoy KLU
+	return 0;
+}
